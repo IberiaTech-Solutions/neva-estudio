@@ -1,9 +1,15 @@
-import { Inter } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata = {
@@ -14,6 +20,12 @@ export const metadata = {
     shortcut: "/neva-logo.svg",
     apple: "/neva-logo.svg",
   },
+  alternates: {
+    languages: {
+      'es': 'https://nevaestudio.com/es',
+      'en': 'https://nevaestudio.com/en',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -22,13 +34,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
+    <html lang="es">
       <head>
         <link rel="icon" href="/neva-logo.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/neva-logo.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/neva-logo.svg" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

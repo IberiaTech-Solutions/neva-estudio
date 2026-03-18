@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from '@/hooks/useTranslations';
 
 interface Project {
   id: number;
@@ -27,6 +28,22 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isImageExpanded, setIsImageExpanded] = useState(false);
+  const t = useTranslations('projects');
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Escape key handler + focus management
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
@@ -40,100 +57,105 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     setCurrentImageIndex(index);
   };
 
-  const toggleImageExpansion = () => {
-    setIsImageExpanded(prev => !prev);
-  };
-
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+        role="dialog"
+        aria-modal="true"
+        aria-label={project.title}
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.8, opacity: 0 }}
-          className="relative w-full max-w-6xl mx-2 sm:mx-4 bg-white rounded-none overflow-hidden max-h-[95vh] sm:max-h-[90vh]"
+          exit={{ scale: 0.95, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="relative w-full max-w-6xl mx-2 sm:mx-4 bg-warm-white overflow-hidden max-h-[85svh] sm:max-h-[90vh]"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button - Architectural */}
+          {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 sm:top-6 sm:right-6 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 hover:bg-white text-gray-900 flex items-center justify-center transition-all duration-300 border border-gray-200 hover:border-gray-300"
+            ref={closeRef}
+            aria-label={t('backToProjects')}
+            className="absolute top-3 right-3 sm:top-5 sm:right-5 z-10 w-11 h-11 bg-white/90 hover:bg-white text-stone-900 flex items-center justify-center transition-all duration-300 border border-stone-200"
           >
-            <X className="h-5 w-5 sm:h-6 sm:w-6" />
+            <X className="h-5 w-5" />
           </button>
 
-          {/* Image Expansion Toggle Button */}
+          {/* Expand Toggle */}
           <button
-            onClick={toggleImageExpansion}
-            className="absolute top-3 left-3 sm:top-6 sm:left-6 z-10 w-10 h-10 sm:w-12 sm:h-12 bg-white/90 hover:bg-white text-gray-900 flex items-center justify-center transition-all duration-300 border border-gray-200 hover:border-gray-300"
-            title={isImageExpanded ? 'Ver imagen normal' : 'Ampliar imagen'}
+            onClick={() => setIsImageExpanded(prev => !prev)}
+            className="absolute top-3 left-3 sm:top-5 sm:left-5 z-10 w-11 h-11 bg-white/90 hover:bg-white text-stone-900 flex items-center justify-center transition-all duration-300 border border-stone-200"
+            aria-label={isImageExpanded ? t('normalView') : t('expandImage')}
           >
-            <Maximize2 className="h-4 w-4 sm:h-5 sm:w-5" />
+            <Maximize2 className="h-4 w-4" />
           </button>
 
           <div className={`grid gap-0 ${isImageExpanded ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-2'}`}>
             {/* Image Carousel */}
-            <div className="relative bg-gray-100">
-              {/* Main Image */}
-              <div className={`relative ${isImageExpanded ? 'aspect-[16/10]' : 'aspect-[4/3] sm:aspect-[4/3]'}`}>
+            <div className="relative bg-stone-100">
+              <div className={`relative ${isImageExpanded ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}>
                 <Image
                   src={project.images[currentImageIndex]}
-                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
+                  alt={`${project.title} - ${t('image')} ${currentImageIndex + 1} ${t('of')} ${project.images.length}`}
                   fill
                   className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={90}
                 />
-                
-                {/* Navigation Arrows */}
+
                 {project.images.length > 1 && (
                   <>
                     <button
                       onClick={prevImage}
-                      className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
+                      aria-label="Previous image"
+                      className="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/80 hover:bg-white text-stone-900 flex items-center justify-center transition-colors"
                     >
-                      <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <ChevronLeft className="h-5 w-5" />
                     </button>
                     <button
                       onClick={nextImage}
-                      className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center transition-colors"
+                      aria-label="Next image"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 bg-white/80 hover:bg-white text-stone-900 flex items-center justify-center transition-colors"
                     >
-                      <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <ChevronRight className="h-5 w-5" />
                     </button>
                   </>
                 )}
 
-                {/* Image Counter */}
                 {project.images.length > 1 && (
-                  <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-black/50 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm">
+                  <div className="absolute bottom-3 right-3 bg-stone-900/60 text-white px-3 py-1 text-xs tracking-wide">
                     {currentImageIndex + 1} / {project.images.length}
                   </div>
                 )}
               </div>
 
-              {/* Thumbnail Navigation */}
+              {/* Thumbnails */}
               {project.images.length > 1 && (
-                <div className="p-2 sm:p-4 bg-gray-50">
-                  <div className="flex gap-1 sm:gap-2 overflow-x-auto">
+                <div className="p-3 bg-stone-50">
+                  <div className="flex gap-1.5 overflow-x-auto">
                     {project.images.map((image, index) => (
                       <button
                         key={index}
                         onClick={() => goToImage(index)}
-                        className={`flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 relative rounded-sm overflow-hidden border-2 transition-colors ${
+                        className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 relative overflow-hidden border-2 transition-colors ${
                           currentImageIndex === index
-                            ? 'border-gray-900'
-                            : 'border-gray-300 hover:border-gray-500'
+                            ? 'border-accent'
+                            : 'border-stone-200 hover:border-stone-400'
                         }`}
                       >
                         <Image
                           src={image}
-                          alt={`Thumbnail ${index + 1}`}
+                          alt={`${t('thumbnail')} ${index + 1}`}
                           fill
                           className="object-cover"
+                          sizes="56px"
+                          quality={60}
                         />
                       </button>
                     ))}
@@ -142,65 +164,54 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               )}
             </div>
 
-            {/* Project Details - Architectural */}
-            <div className={`p-4 sm:p-6 lg:p-12 overflow-y-auto max-h-[80vh] sm:max-h-[85vh] bg-white ${isImageExpanded ? 'hidden' : ''}`}>
-              {/* Header */}
-              <div className="mb-8 sm:mb-10 lg:mb-12">
-                <div className="text-xs sm:text-sm text-gray-500 font-light mb-3 sm:mb-4 tracking-wide uppercase">
+            {/* Project Details */}
+            <div className={`p-5 sm:p-8 lg:p-12 overflow-y-auto max-h-[60svh] sm:max-h-[80vh] bg-warm-white ${isImageExpanded ? 'hidden' : ''}`}>
+              <div className="mb-8 sm:mb-10">
+                <div className="text-xs text-accent tracking-[0.15em] uppercase mb-3">
                   {project.category}
                 </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-thin text-gray-900 mb-6 sm:mb-8 tracking-tight leading-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-stone-900 mb-6 leading-tight">
                   {project.title}
                 </h2>
-                <div className="w-16 sm:w-20 lg:w-24 h-px bg-gray-300 mb-6 sm:mb-8"></div>
+                <div className="w-12 h-px bg-accent"></div>
               </div>
 
-              {/* Project Info - Minimalist */}
-              <div className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-10 lg:mb-12">
-                <div className="text-center">
-                  <div className="w-6 sm:w-8 h-px bg-gray-300 mx-auto mb-2 sm:mb-3"></div>
-                  <div className="text-xs text-gray-500 font-light tracking-wide uppercase mb-1">Ubicación</div>
-                  <div className="text-xs sm:text-sm text-gray-900 font-light">{project.location}</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-6 sm:w-8 h-px bg-gray-300 mx-auto mb-2 sm:mb-3"></div>
-                  <div className="text-xs text-gray-500 font-light tracking-wide uppercase mb-1">Año</div>
-                  <div className="text-xs sm:text-sm text-gray-900 font-light">{project.year}</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-6 sm:w-8 h-px bg-gray-300 mx-auto mb-2 sm:mb-3"></div>
-                  <div className="text-xs text-gray-500 font-light tracking-wide uppercase mb-1">Superficie</div>
-                  <div className="text-xs sm:text-sm text-gray-900 font-light">{project.area}</div>
-                </div>
-              </div>
-
-              {/* Photographer Credit */}
-              {project.photographer && (
-                <div className="mb-8 sm:mb-10 lg:mb-12 text-center">
-                  <div className="w-12 sm:w-16 h-px bg-gray-300 mx-auto mb-3 sm:mb-4"></div>
-                  <div className="text-xs sm:text-sm text-gray-500 font-light tracking-wide uppercase">
-                    Fotografías: {project.photographer}
+              {/* Project Info */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-10">
+                {[
+                  { label: t('location'), value: project.location },
+                  { label: t('year'), value: project.year },
+                  { label: t('area'), value: project.area }
+                ].map((info) => (
+                  <div key={info.label}>
+                    <div className="text-xs text-stone-400 tracking-[0.1em] uppercase mb-1">{info.label}</div>
+                    <div className="text-sm text-stone-700">{info.value}</div>
                   </div>
+                ))}
+              </div>
+
+              {project.photographer && (
+                <div className="mb-10 py-3 border-t border-b border-stone-200">
+                  <span className="text-[11px] text-stone-400 tracking-[0.1em] uppercase">{t('photos')}: </span>
+                  <span className="text-sm text-stone-600">{project.photographer}</span>
                 </div>
               )}
 
-              {/* Description - Architectural Typography */}
-              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10 lg:mb-12">
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-light">
+              <div className="space-y-4 mb-10">
+                <p className="text-base text-stone-600 leading-relaxed">
                   {project.description}
                 </p>
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-light">
+                <p className="text-base text-stone-500 leading-relaxed">
                   {project.detailedDescription}
                 </p>
               </div>
 
-              {/* Close Button */}
-              <div className="pt-6 sm:pt-8 border-t border-gray-200">
+              <div className="pt-6 border-t border-stone-200">
                 <button
                   onClick={onClose}
-                  className="w-full bg-gray-900 text-white px-6 py-3 sm:px-8 sm:py-4 font-light text-base sm:text-lg hover:bg-gray-800 transition-all duration-500 border border-gray-900"
+                  className="w-full bg-stone-900 text-white px-6 py-3.5 text-sm tracking-wide hover:bg-stone-800 transition-colors duration-300"
                 >
-                  Volver a proyectos
+                  {t('backToProjects')}
                 </button>
               </div>
             </div>

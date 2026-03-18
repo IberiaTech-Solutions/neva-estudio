@@ -12,6 +12,8 @@
     "contact": "Contact"
   },
   "hero": {
+    "headline1": "Architecture",
+    "headline2": "close to you",
     "greeting": "Hello, we are",
     "company": "NEVA",
     "description": "Our architecture studio is located in Asturias, although we have worked throughout Spain. In our more than 10 years of experience, we have developed a close and humanistic architecture.",
@@ -55,10 +57,45 @@
   "estudio": {
     "title": "Architecture studio",
     "historia": {
-      "title": "HISTORY",
+      "title": "History",
       "paragraph1": "Neva are Andrés Suárez and Laín Fernández. We met studying at the School of Architecture in A Coruña. From the first moment friendship arose and we soon saw that we also shared ideas about our profession that fit together.",
       "paragraph2": "In 2016 we were granted a scholarship for the Creative Industries Incubator of Matadero, in Madrid. There began a fruitful professional collaboration that, at first, we alternated with work in other architecture studios in Madrid and Asturias.",
       "paragraph3": "In 2021, already established in Gijón, we decided to take a step further and create our own brand and studio. Thus Neva was born."
+    },
+    "timeline": {
+      "title": "Our journey",
+      "items": [
+        {
+          "year": "2011",
+          "title": "School of Architecture",
+          "description": "Andrés and Laín meet at the School of Architecture in A Coruña. A friendship is born alongside a shared vision of the profession."
+        },
+        {
+          "year": "2016",
+          "title": "Matadero Madrid",
+          "description": "Scholarship at the Creative Industries Incubator of Matadero. A professional collaboration begins, alternated with work at other studios."
+        },
+        {
+          "year": "2018",
+          "title": "First own projects",
+          "description": "First commissions for single-family homes and rehabilitation in Asturias and León. Casa RDV and Extension BR mark the beginning."
+        },
+        {
+          "year": "2021",
+          "title": "NEVA is born",
+          "description": "Established in Gijón, they create their own brand and studio. NEVA is born with a clear philosophy: close and humanistic architecture."
+        },
+        {
+          "year": "2023",
+          "title": "Growth",
+          "description": "The studio grows with residential, commercial and rehabilitation projects across Spain. Wefreak in Madrid, Río Trubia, Poniente Beach."
+        },
+        {
+          "year": "2024",
+          "title": "Present",
+          "description": "Over 14 built projects. NEVA establishes itself as a reference for close architecture in Asturias."
+        }
+      ]
     },
     "porque": {
       "title": "Why 'Neva'",
@@ -66,63 +103,117 @@
       "explanation": "When snow covers the valley or the mountain, it creates a blank canvas on which any idea is possible, awakening inspiration. A canvas, however, whose visual grandeur, calm and serenity invite respect: what we create there must be up to the task."
     },
     "equipo": {
-      "title": "MAIN TEAM",
+      "title": "Main team",
       "andres": {
         "name": "Andrés Suárez",
-        "title": "ARCHITECT",
+        "title": "Architect",
         "role": "Founding partner"
       },
       "lain": {
         "name": "Laín Fernández",
-        "title": "ARCHITECT",
+        "title": "Architect",
         "role": "Founding partner"
       }
     }
   },
   "projects": {
-    "title": "PROJECTS",
+    "title": "Projects",
     "description": "Discover some of our most outstanding projects. Each one represents our commitment to architectural excellence and client satisfaction.",
     "viewMore": "View more projects",
+    "location": "Location",
+    "year": "Year",
+    "area": "Area",
+    "photos": "Photos",
+    "backToProjects": "Back to projects",
+    "thumbnail": "Thumbnail",
+    "image": "Image",
+    "of": "of",
+    "normalView": "Normal view",
+    "expandImage": "Expand image",
     "items": {
       "casa-rdv": {
         "title": "Casa RDV",
         "category": "Housing",
-        "description": "Modern single-family home with sustainable design"
+        "description": "Modern single-family home with sustainable design",
+        "detailedDescription": "A young couple commissioned a home for everyday use. It would be the home of their future family, so they needed at least three bedrooms. They had the dream of incorporating a dressing room and bathroom in the master bedroom. They asked us for a pantry and a laundry room attached to the kitchen, two very useful spaces for daily life. They also wanted a large covered outdoor porch, allowing them to spend time outdoors. Given the location, they needed a garage for two vehicles.\n\nTo accommodate all these requests, we designed a play of orthogonal volumes on two levels, with an additional module for the garage. This allowed us to cantilever one volume over another, creating a covered entrance to the home.\n\nOn the ground floor we placed the daytime and guest areas (kitchen, living room, bathroom and a bedroom/study). On the upper floor we located the private rooms (master suite, two double bedrooms, a bathroom and even a comfortable multipurpose room).\n\nWe combined stone and two-tone mortar finishes (black and white) to achieve a contemporary yet welcoming visual appearance."
       },
       "casa-nvp": {
         "title": "Casa NVP",
         "category": "Housing",
-        "description": "Contemporary architecture integrated into the landscape"
+        "description": "Contemporary architecture integrated into the landscape",
+        "detailedDescription": "This single-family home represents a perfect example of contemporary architecture that harmoniously integrates with the Asturian landscape. The design respects the terrain's topography while maximizing views and natural light. The materials used reflect local tradition adapted to modern construction techniques, creating a space that is both functional and aesthetically striking."
       },
       "loft-rural": {
         "title": "Rural Loft",
         "category": "Rehabilitation",
-        "description": "Rural space rehabilitation with industrial design"
+        "description": "Rural space rehabilitation with industrial design",
+        "detailedDescription": "Transformation of a traditional rural space into a modern loft with industrial aesthetics. The project maintains the original structure while incorporating contemporary and functional elements. The result is a versatile space that combines the warmth of original materials with the functionality of modern design."
       },
       "ampliacion-br": {
         "title": "Extension BR",
         "category": "Rehabilitation",
-        "description": "Residential extension with natural materials"
+        "description": "Single-family home extension with views of Sierra del Sueve",
+        "detailedDescription": "Single-family home extension adding a triple bedroom and living room on the ground floor, plus a private area on the first floor with a living room, bedroom with dressing room and bathroom. The new volume faces south to maximize sunlight and views toward Sierra del Sueve, covered with a four-slope roof matching the home's aesthetic. White render forms the building envelope, with slate roofing matching existing materials."
       },
       "ampliacion-vll": {
         "title": "Extension VLL",
         "category": "Rehabilitation",
-        "description": "Modern extension respecting original architecture"
+        "description": "Modern extension respecting original architecture",
+        "detailedDescription": "Carefully designed extension that maintains the essence of the original architecture while incorporating modern solutions. The project demonstrates how it is possible to expand an existing home without compromising its architectural character, creating additional spaces that integrate perfectly with the original structure."
       },
       "reforma-ol": {
         "title": "Renovation OL",
         "category": "Rehabilitation",
-        "description": "Complete renovation with interior design"
+        "description": "Complete renovation with interior design",
+        "detailedDescription": "Complete renovation that fully transforms the interior space, optimizing the layout and improving functionality. The project includes personalized interior design that reflects the inhabitants' lifestyle, creating a modern and welcoming home."
       },
       "poniente-playa": {
         "title": "Poniente Beach",
         "category": "Housing",
-        "description": "Coastal home with sea views"
+        "description": "Change of use from commercial to accessible dwelling",
+        "detailedDescription": "Conversion of a commercial space into a dwelling with a minimal program and open plan, with a single compartmentalized bathroom. The bedroom is located at the rear for reduced noise, while the living-dining-kitchen area occupies the front near the entrance. A transparent transitional portal connects exterior and interior, maximizing natural light through dual opposing facades with translucent glazing."
       },
       "pie-playa": {
         "title": "At the Beach",
         "category": "Housing",
-        "description": "Sustainable coastal architecture"
+        "description": "Change of use from commercial to coastal residence",
+        "detailedDescription": "Change of use project converting a commercial space into a residential dwelling in Gijón. A design that makes the most of the available space to create a functional and bright home by the beach."
+      },
+      "reforma-ra": {
+        "title": "Reforma RA",
+        "category": "Commercial",
+        "description": "Commercial space renovation after 25+ years",
+        "detailedDescription": "Renovation of a commercial space seeking to optimize space utilization and storage capacity after more than 25 years of operation. The project relocates the interior staircase from the back to the double-height space, transforming it into a sculptural element. This frees up storage and workshop areas. The mezzanine's dividing wall is removed to restore the original single-space storage, revealing the original wrought iron pillars."
+      },
+      "wefreak": {
+        "title": "Wefreak",
+        "category": "Commercial",
+        "description": "Interior design for toy store chain in Madrid",
+        "detailedDescription": "Renovation and interior design of two commercial spaces for a toy store chain in Madrid. The design follows the established brand identity: simple design with minimal elements, maintaining corporate colors. The main space features an open layout with light colors, functional white furniture without ornaments, and black and gold accents for singular elements and signage. Lighting combines main illumination with indirect LED or Neon-LED strips serving a decorative function."
+      },
+      "rio-trubia": {
+        "title": "Río Trubia",
+        "category": "Commercial",
+        "description": "Veterinary center adaptation",
+        "detailedDescription": "Adaptation of an existing commercial space for a veterinary center in Trubia, Asturias. The project transforms a commercial space into a functional and welcoming veterinary center, adapting the layout to the specific needs of veterinary practice."
+      },
+      "candanal": {
+        "title": "Candanal",
+        "category": "Rehabilitation",
+        "description": "Complete residential rehabilitation",
+        "detailedDescription": "Residential rehabilitation project that completely renovates a home in Candanal, Asturias. The intervention respects the original structure while incorporating contemporary interior design, creating modern and functional spaces."
+      },
+      "fachada-ac": {
+        "title": "Fachada AC",
+        "category": "Facades",
+        "description": "Facade rehabilitation with decorative HPL panels",
+        "detailedDescription": "Minimal intervention on the facade of an existing residence in Salinas, Asturias. The project aims to address defects, renew materials and give the home a fresh appearance. Surfaces are homogenized by removing existing moldings, decorative HPL lattice panels are installed on the second-floor facade, and wooden shutters are placed to match the overall color palette."
+      },
+      "playa-8": {
+        "title": "Playa 8",
+        "category": "Facades",
+        "description": "Building facade rehabilitation in Gijón",
+        "detailedDescription": "Facade rehabilitation project for a building in Gijón. The intervention renews the building's exterior image while improving its energy efficiency and visual appearance."
       }
     },
     "filters": {
@@ -134,28 +225,47 @@
     }
   },
   "services": {
-    "title": "Architecture services in Asturias",
-    "description": "Our architecture studio works throughout Asturias. For each project, we provide quality solutions that make the client's vision a reality.",
+    "title": "Services",
+    "description": "We design spaces that improve your daily life.",
+    "subtitle": "In over 10 years of experience we have developed a human and close architecture, adapting each project to the needs of the people.",
+    "subtitle2": "We work in our studio in Asturias and design comfortable, practical and inspiring spaces.",
+    "cta": "Discover our architecture services!",
+    "seeMore": "View more services",
     "items": {
       "residential": {
-        "title": "Residential and commercial projects",
-        "description": "Whether for your home, business or office, we will design a differential space. We carry out each project in a personalized way, adapting to the characteristics of the property and the client's expectations.",
-        "features": ["Single-family homes", "Residential buildings", "Commercial premises", "Corporate offices"]
+        "title": "Residential",
+        "description": "Within residential architecture, we carry out new construction projects, rehabilitations, extensions and interior renovations.",
+        "features": ["Single-family homes", "Collective housing", "Change of use from commercial to residential", "Renovations", "Portal accessibility improvements"]
       },
-      "renovations": {
-        "title": "Renovations and rehabilitations",
-        "description": "We completely transform your spaces, with a **sustainable and efficient approach.**",
-        "features": ["Complete renovations", "Building rehabilitation", "Space modernization", "Energy efficiency"]
+      "commercial": {
+        "title": "Commercial",
+        "description": "We work to boost businesses, adapting to the needs of each brand or client.",
+        "features": ["Change of use", "Adaptation of premises for commerce, hospitality, etc.", "Activity projects", "Opening licenses"]
       },
-      "interior": {
-        "title": "Interior design",
-        "description": "Style, personality and comfort. In our **architecture studio** we **design** environments where each element serves a purpose and integrates into the whole.",
-        "features": ["Space design", "Material selection", "Lighting", "Custom furniture"]
+      "urbanism": {
+        "title": "Urban planning",
+        "description": "We develop urban plans and specific subdivision and urbanization projects, as well as allegations and suggestions to General Plans.",
+        "features": ["Subdivision projects", "Urbanization projects"]
       },
-      "consulting": {
-        "title": "Architecture consulting",
-        "description": "If you need help defining your home proposal, we also offer **architecture consulting**. We will help you analyze every aspect of the property to advise you correctly.",
-        "features": ["Technical advice", "Feasibility analysis", "Preliminary studies", "License management"]
+      "energy": {
+        "title": "Energy rehabilitation",
+        "description": "Energy efficiency is part of our commitment. We improve the thermal envelope of buildings to increase comfort and reduce energy consumption.",
+        "features": ["Building thermal envelopes"]
+      },
+      "reports": {
+        "title": "Reports",
+        "description": "We provide the technical documentation and certifications necessary for any technical work.",
+        "features": ["Legalization files", "New old construction certificates", "Technical reports", "Building Evaluation Reports", "Energy Efficiency Certificates"]
+      },
+      "other": {
+        "title": "Other projects",
+        "description": "At Neva studio we offer solutions in all areas of architecture.",
+        "features": ["Consulting and advisory", "Interior design", "Demolition projects", "3D modeling and infographics"]
+      },
+      "turnkey": {
+        "title": "Turnkey",
+        "description": "We comprehensively manage all project phases, from start to final delivery. Our goal is to simplify the process for the client, organizing and coordinating the various procedures and agents.",
+        "features": []
       }
     },
     "whyChooseUs": {
@@ -167,15 +277,15 @@
         },
         "personalized": {
           "title": "Personalized approach",
-          "description": "Our first step is always to get to know our clients and understand what they are looking for. This personalized approach allows us to adapt each project to your specific needs and that you always feel it as yours."
+          "description": "Our first step is always to get to know our clients and understand what they are looking for. This personalized approach allows us to adapt each project to your specific needs."
         },
         "commitment": {
           "title": "Commitment to success",
-          "description": "**Our goal is to exceed our clients' expectations** in each project. At _Neva Studio_ we are committed to success and work to offer quality results."
+          "description": "Our goal is to exceed our clients' expectations in each project. At Neva Studio we are committed to success and work to offer quality results."
         },
         "versatility": {
           "title": "Versatility and adaptability",
-          "description": "If something defines our team of **architects in Gijón** is their versatility and adaptability, which allow us to respond to any project, regardless of its size or complexity."
+          "description": "If something defines our team of architects in Gijón it is their versatility and adaptability, which allow us to respond to any project, regardless of its size or complexity."
         }
       }
     }
@@ -213,14 +323,33 @@
       "phone": "Phone",
       "phoneValue": "+34 XXX XXX XXX",
       "email": "Email",
-      "emailValue": "info@nevaestudio.com"
+      "emailValue": "estudio@nevaestudio.com",
+      "team": {
+        "title": "Our team",
+        "andres": {
+          "name": "Andrés Suárez",
+          "role": "Architect · Founding partner",
+          "phone": "+34 636 761 306",
+          "email": "asuarez@nevaestudio.com"
+        },
+        "lain": {
+          "name": "Laín Fernández",
+          "role": "Architect · Founding partner",
+          "phone": "+34 627 796 806",
+          "email": "lainff@nevaestudio.com"
+        }
+      }
     }
   },
   "footer": {
     "description": "Architecture studio in Gijón with over 10 years of experience. Close and humanistic architecture that adapts to your needs.",
     "links": "Links",
     "contact": "Contact",
-    "copyright": "©2025 NEVA Studio. All rights reserved.",
+    "copyright": "© 2025 NEVA Studio. All rights reserved.",
+    "accessibility": "Accessibility",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "legal": "Legal Notice",
     "privacy": "Privacy policy",
     "legal": "Legal notice",
     "cookies": "Cookie policy"

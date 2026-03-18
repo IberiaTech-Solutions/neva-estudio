@@ -12,6 +12,8 @@
     "contact": "Contacto"
   },
   "hero": {
+    "headline1": "Arquitectura",
+    "headline2": "cercana",
     "greeting": "Hola, somos",
     "company": "NEVA",
     "description": "Nuestro estudio de arquitectura está en Asturias, aunque hemos trabajado por toda España. En nuestros más de 10 años de experiencia, hemos desarrollado una arquitectura cercana y humanista.",
@@ -123,6 +125,41 @@
       "paragraph2": "En 2016 nos concedieron una beca para el Vivero de Industrias Creativas de Matadero, en Madrid. Ahí comenzó una fructífera colaboración profesional que, al principio, alternamos con trabajos en otros estudios de arquitectura de Madrid y Asturias.",
       "paragraph3": "En 2021, ya establecidos en Gijón, decidimos dar un paso más y crear nuestra propia marca y estudio. Así nació Neva."
     },
+    "timeline": {
+      "title": "Nuestra trayectoria",
+      "items": [
+        {
+          "year": "2011",
+          "title": "Escuela de Arquitectura",
+          "description": "Andrés y Laín se conocen en la Escuela de Arquitectura de A Coruña. Nace una amistad y una visión compartida sobre la profesión."
+        },
+        {
+          "year": "2016",
+          "title": "Matadero Madrid",
+          "description": "Beca en el Vivero de Industrias Creativas de Matadero. Comienza una colaboración profesional que alternan con trabajo en otros estudios."
+        },
+        {
+          "year": "2018",
+          "title": "Primeros proyectos propios",
+          "description": "Primeros encargos de vivienda unifamiliar y rehabilitación en Asturias y León. Casa RDV y Ampliación BR marcan el inicio."
+        },
+        {
+          "year": "2021",
+          "title": "Nace NEVA",
+          "description": "Establecidos en Gijón, crean su propia marca y estudio. NEVA nace con una filosofía clara: arquitectura cercana y humanista."
+        },
+        {
+          "year": "2023",
+          "title": "Consolidación",
+          "description": "El estudio crece con proyectos residenciales, comerciales y de rehabilitación por toda España. Wefreak en Madrid, Río Trubia, Poniente Playa."
+        },
+        {
+          "year": "2024",
+          "title": "Presente",
+          "description": "Más de 14 proyectos construidos. NEVA se consolida como referente de arquitectura cercana en Asturias."
+        }
+      ]
+    },
     "porque": {
       "title": "Por qué 'Neva'",
       "definition": "nevar: v. Cayer nieve [de les nubes]",
@@ -143,9 +180,19 @@
     }
   },
   "projects": {
-    "title": "PROYECTOS",
+    "title": "Proyectos",
     "description": "Descubre algunos de nuestros proyectos más destacados. Cada uno representa nuestro compromiso con la excelencia arquitectónica y la satisfacción del cliente.",
     "viewMore": "Ver más",
+    "location": "Ubicación",
+    "year": "Año",
+    "area": "Superficie",
+    "photos": "Fotografías",
+    "backToProjects": "Volver a proyectos",
+    "thumbnail": "Miniatura",
+    "image": "Imagen",
+    "of": "de",
+    "normalView": "Ver imagen normal",
+    "expandImage": "Ampliar imagen",
     "items": {
       "casa-rdv": {
         "title": "Casa RDV",
@@ -168,8 +215,8 @@
       "ampliacion-br": {
         "title": "Ampliación BR",
         "category": "Rehabilitación",
-        "description": "Ampliación residencial con materiales naturales",
-        "detailedDescription": "Proyecto de ampliación que respeta la arquitectura original mientras añade espacios modernos y funcionales. Se utilizaron materiales naturales que armonizan con el entorno, creando una transición fluida entre lo existente y lo nuevo. La ampliación mejora significativamente la calidad de vida de los habitantes."
+        "description": "Ampliación de vivienda unifamiliar con vistas a Sierra del Sueve",
+        "detailedDescription": "Ampliación de vivienda unifamiliar que añade un dormitorio triple y salón en planta baja, más una zona privada en planta primera con salón, dormitorio con vestidor y baño. El nuevo volumen se orienta a sur para maximizar la luz solar y las vistas hacia la Sierra del Sueve, cubierto con una cubierta a cuatro aguas que mantiene la estética de la vivienda. El enfoscado blanco configura la envolvente, con cubierta de pizarra en consonancia con los materiales existentes."
       },
       "ampliacion-vll": {
         "title": "Ampliación VLL",
@@ -186,14 +233,50 @@
       "poniente-playa": {
         "title": "Poniente Playa",
         "category": "Vivienda",
-        "description": "Vivienda costera con vistas al mar",
-        "detailedDescription": "Vivienda diseñada para aprovechar al máximo las vistas al mar y la orientación poniente. El diseño maximiza la luz natural y las vistas panorámicas, creando una conexión constante entre el interior y el paisaje costero. Los materiales y acabados están seleccionados para resistir el ambiente marino."
+        "description": "Cambio de uso de local a vivienda con diseño accesible",
+        "detailedDescription": "Conversión de un local comercial en vivienda con programa mínimo y planta abierta, con un único baño compartimentado. El dormitorio se ubica en la parte posterior para reducir ruido, mientras que la zona de estar-comedor-cocina ocupa la parte frontal. Un portal transparente conecta exterior e interior, maximizando la luz natural a través de fachadas opuestas con acristalamiento translúcido."
       },
       "pie-playa": {
         "title": "A Pie de Playa",
         "category": "Vivienda",
-        "description": "Arquitectura costera sostenible",
-        "detailedDescription": "Proyecto de vivienda costera que combina diseño arquitectónico con principios de sostenibilidad ambiental. La casa está diseñada para minimizar su impacto en el entorno natural mientras proporciona espacios cómodos y funcionales. El diseño aprovecha las condiciones climáticas locales para optimizar el confort térmico."
+        "description": "Cambio de uso de local a vivienda costera",
+        "detailedDescription": "Proyecto de cambio de uso de local comercial a vivienda residencial en Gijón. Un diseño que aprovecha al máximo el espacio disponible para crear un hogar funcional y luminoso a pie de playa."
+      },
+      "reforma-ra": {
+        "title": "Reforma RA",
+        "category": "Locales",
+        "description": "Reforma de local comercial con más de 25 años",
+        "detailedDescription": "Reforma de un local comercial que buscaba optimizar el aprovechamiento del espacio y la capacidad de almacenaje tras más de 25 años de actividad. El proyecto reubica la escalera interior desde la parte trasera al espacio de doble altura, convirtiéndola en un elemento escultórico. Esto libera las zonas de almacenaje y taller. Se elimina el tabique divisorio del altillo para recuperar el almacén original como espacio único, revelando los pilares originales de hierro forjado."
+      },
+      "wefreak": {
+        "title": "Wefreak",
+        "category": "Locales",
+        "description": "Diseño de interiores para cadena de jugueterías en Madrid",
+        "detailedDescription": "Reforma y diseño de interiores de dos locales comerciales para una cadena de jugueterías en Madrid. El diseño sigue la identidad de marca establecida: diseño sencillo con elementos mínimos, manteniendo los colores corporativos. El espacio principal presenta una planta abierta con colores claros, mobiliario blanco funcional sin ornamentos, y acentos en negro y dorado para elementos singulares y señalización. La iluminación combina luz principal con tiras LED indirectas o Neon-LED con función decorativa."
+      },
+      "rio-trubia": {
+        "title": "Río Trubia",
+        "category": "Locales",
+        "description": "Adecuación de local para centro veterinario",
+        "detailedDescription": "Adecuación de un local existente para centro veterinario en Trubia, Asturias. El proyecto transforma un espacio comercial en un centro veterinario funcional y acogedor, adaptando la distribución a las necesidades específicas de la actividad veterinaria."
+      },
+      "candanal": {
+        "title": "Candanal",
+        "category": "Rehabilitación",
+        "description": "Rehabilitación residencial completa en Asturias",
+        "detailedDescription": "Proyecto de rehabilitación residencial que renueva completamente una vivienda en Candanal, Asturias. La intervención respeta la estructura original mientras incorpora un diseño interior contemporáneo, creando espacios modernos y funcionales."
+      },
+      "fachada-ac": {
+        "title": "Fachada AC",
+        "category": "Fachadas",
+        "description": "Rehabilitación de fachada con paneles HPL decorativos",
+        "detailedDescription": "Intervención mínima en la fachada de una vivienda existente en Salinas, Asturias. El proyecto busca subsanar desperfectos, renovar materiales y dotar de una nueva imagen a la vivienda. Se homogenizan las superficies eliminando molduras existentes, se instalan paneles de celosía HPL decorativos en la fachada de la segunda planta y se colocan contraventanas de madera en consonancia con la paleta cromática del conjunto."
+      },
+      "playa-8": {
+        "title": "Playa 8",
+        "category": "Fachadas",
+        "description": "Rehabilitación de fachada en Gijón",
+        "detailedDescription": "Proyecto de rehabilitación de fachada de un edificio en Gijón. La intervención renueva la imagen exterior del edificio mejorando su eficiencia energética y aspecto visual."
       }
     },
     "filters": {
@@ -205,7 +288,7 @@
     }
   },
   "services": {
-    "title": "SERVICIOS",
+    "title": "Servicios",
     "description": "Proyectamos espacios que mejoren tu día a día.",
     "subtitle": "En los más de 10 años de experiencia hemos desarrollado una arquitectura humana y cercana, adaptando cada proyecto a las necesidades de las personas.",
     "subtitle2": "Trabajamos en nuestro estudio en Asturias y diseñamos espacios confortables y prácticos, a la vez que inspiradores.",
@@ -325,7 +408,11 @@
     "description": "Estudio de arquitectura en Gijón con más de 10 años de experiencia. Arquitectura cercana y humanista que se adapta a tus necesidades.",
     "links": "Enlaces",
     "contact": "Contacto",
-    "copyright": "©2025 NEVA Estudio. Todos los derechos reservados.",
+    "copyright": "© 2025 NEVA Estudio. Todos los derechos reservados.",
+    "accessibility": "Accesibilidad",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "legal": "Aviso Legal",
     "privacy": "Política de privacidad",
     "legal": "Aviso legal",
     "cookies": "Política de cookies"

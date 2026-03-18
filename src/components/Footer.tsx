@@ -8,125 +8,112 @@ export default function Footer() {
   const t = useTranslations('footer');
   const tNav = useTranslations('navigation');
   const locale = useLocale();
+
   return (
-        <footer className="bg-gray-50 text-gray-900 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
-              {/* Logo and Description */}
-              <div className="col-span-1 md:col-span-2">
-                <div className="mb-8">
-                  <img 
-                    src="/neva-logo-apaisado.svg" 
-                    alt="NEVA Estudio" 
-                    className="h-14 w-auto"
-                  />
-                </div>
-                <p className="text-gray-600 mb-8 max-w-lg text-sm font-light leading-relaxed">
+    <footer className="bg-stone-900 text-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-10">
+          {/* Logo and Description */}
+          <div className="col-span-1 md:col-span-2">
+            <div className="mb-6">
+              <img
+                src="/neva-logo-apaisado.svg"
+                alt="NEVA Estudio"
+                className="h-12 w-auto brightness-0 invert"
+              />
+            </div>
+            <p className="text-stone-400 mb-8 max-w-md text-sm leading-relaxed">
               {t('description')}
             </p>
-                <div className="flex space-x-4">
-                  <a 
-                    href="https://www.linkedin.com/company/neva-estudio" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-900 transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/nevaestudio/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-900 transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="h-5 w-5" />
-                  </a>
-                </div>
+            <div className="flex gap-4">
+              <a
+                href="https://www.instagram.com/nevaestudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a
+                href="https://es.linkedin.com/in/andrés-suárez-209859108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 border border-stone-700 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-500 transition-colors"
+                aria-label="LinkedIn - Andrés"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
           </div>
 
-              {/* Quick Links */}
-              <div>
-                <h3 className="text-base font-light mb-8 tracking-wide">{t('links')}</h3>
-                <ul className="space-y-3">
-                  <li>
-                    <Link href={`/${locale}#hero`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light">
-                      {tNav('home')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${locale}#about`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light">
-                      {tNav('about')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${locale}#projects`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light">
-                      {tNav('projects')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${locale}#services`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light">
-                      {tNav('services')}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href={`/${locale}#contact`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm font-light">
-                      {tNav('contact')}
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-xs text-stone-400 tracking-[0.15em] uppercase mb-6">{t('links')}</h3>
+            <ul className="space-y-3">
+              {[
+                { label: tNav('home'), href: `/${locale}#hero` },
+                { label: tNav('about'), href: `/${locale}#about` },
+                { label: tNav('projects'), href: `/${locale}#projects` },
+                { label: tNav('services'), href: `/${locale}#services` },
+                { label: tNav('contact'), href: `/${locale}#contact` },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-stone-400 hover:text-white transition-colors text-sm">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Contact Info */}
           <div>
-                <h3 className="text-base font-light mb-8 tracking-wide">{t('contact')}</h3>
+            <h3 className="text-xs text-stone-400 tracking-[0.15em] uppercase mb-6">{t('contact')}</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-gray-400" />
-                <span className="text-gray-600 text-sm font-light">Calle Decano Prendes Pando 20, 1°E, Gijón, Asturias</span>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 text-stone-500 mt-0.5 flex-shrink-0" />
+                <span className="text-stone-400 text-sm">Calle Decano Prendes Pando 20, 1°E, Gijón, Asturias</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-gray-400" />
-                <span className="text-gray-600 text-sm font-light">estudio@nevaestudio.com</span>
+              <div className="flex items-center gap-3">
+                <Mail className="h-4 w-4 text-stone-500" />
+                <span className="text-stone-400 text-sm">estudio@nevaestudio.com</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-300 mt-16 pt-10">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm font-light">
+        <div className="border-t border-stone-800 mt-14 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <p className="text-stone-500 text-xs">
               {t('copyright')}
             </p>
-            
+
             {/* Funding Logos */}
-            <div className="flex items-center space-x-6 mt-6 md:mt-0">
-              <img 
-                src="/es_financiado_por_la_union_europea_rgb_black_outline-2048x53.png" 
-                alt="Financiado por la Unión Europea" 
-                className="h-8 w-auto opacity-70"
+            <div className="flex items-center gap-4 flex-wrap">
+              <img
+                src="/es_financiado_por_la_union_europea_rgb_black_outline-2048x53.png"
+                alt="Financiado por la Unión Europea"
+                className="h-5 sm:h-6 w-auto max-w-[140px] sm:max-w-none opacity-50 invert"
               />
-              <img 
-                src="/logo-prtr-tres-li╠uneas_negro.png" 
-                alt="PRTR" 
-                className="h-8 w-auto opacity-70"
+              <img
+                src="/logo-prtr-tres-lineas-negro.png"
+                alt="PRTR"
+                className="h-5 sm:h-6 w-auto max-w-[80px] sm:max-w-none opacity-50 invert"
               />
             </div>
-            
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-0">
-              <Link href="/politica-accesibilidad" className="text-gray-500 hover:text-gray-900 text-sm font-light transition-colors">
-                Política de Accesibilidad
-              </Link>
-              <Link href="/politica-privacidad" className="text-gray-500 hover:text-gray-900 text-sm font-light transition-colors">
-                Política de Privacidad
-              </Link>
-              <Link href="/politica-cookies" className="text-gray-500 hover:text-gray-900 text-sm font-light transition-colors">
-                Política de Cookies
-              </Link>
-              <Link href="/aviso-legal" className="text-gray-500 hover:text-gray-900 text-sm font-light transition-colors">
-                Aviso Legal
-              </Link>
+
+            <div className="flex flex-wrap gap-4">
+              {[
+                { label: 'Accesibilidad', href: '/politica-accesibilidad' },
+                { label: 'Privacidad', href: '/politica-privacidad' },
+                { label: 'Cookies', href: '/politica-cookies' },
+                { label: 'Aviso Legal', href: '/aviso-legal' },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="text-stone-500 hover:text-stone-300 text-xs transition-colors">
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

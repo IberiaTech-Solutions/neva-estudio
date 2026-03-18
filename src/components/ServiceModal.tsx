@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight } from 'lucide-react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -12,18 +12,28 @@ interface ServiceModalProps {
 }
 
 export default function ServiceModal({ isOpen, onClose, serviceKey, onServiceSelect }: ServiceModalProps) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Escape key + focus
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus();
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [isOpen, onClose]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     }
 
     // Cleanup function to restore scroll when component unmounts
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -629,7 +639,10 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative bg-white rounded-none shadow-2xl max-w-4xl w-full mx-2 sm:mx-4 max-h-[95vh] sm:max-h-[90vh] overflow-hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Service details"
+            className="relative bg-white rounded-none shadow-2xl max-w-4xl w-full mx-2 sm:mx-4 max-h-[85svh] sm:max-h-[90vh] overflow-hidden"
           >
             {/* Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 px-4 sm:px-8 py-6 sm:py-8">
@@ -639,9 +652,10 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                   <div className="w-16 h-px bg-gray-400"></div>
                 </div>
                 <button
+                  ref={closeRef}
                   onClick={onClose}
                   className="p-2 hover:bg-gray-100 rounded-none transition-colors border border-gray-200 hover:border-gray-300"
-                  aria-label="Cerrar"
+                  aria-label="Close"
                 >
                   <X className="h-5 w-5 text-gray-500" />
                 </button>
