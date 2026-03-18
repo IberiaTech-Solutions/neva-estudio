@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from '@/hooks/useTranslations';
 import { useState } from 'react';
 import ServiceModal from './ServiceModal';
@@ -139,21 +139,23 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Toggle indicator */}
-                <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                  <div className={`w-4 h-px bg-stone-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-0' : ''}`} />
-                  <div className={`w-px h-4 bg-stone-400 absolute transition-transform duration-300 ${expandedIndex === index ? 'rotate-90 opacity-0' : ''}`} />
+                <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center relative">
+                  <div className="w-4 h-px bg-stone-400 transition-transform duration-300" />
+                  <div className={`w-px h-4 bg-stone-400 absolute transition-all duration-300 ${expandedIndex === index ? 'rotate-90 opacity-0' : 'opacity-100'}`} />
                 </div>
               </button>
 
               {/* Expanded content */}
-              {expandedIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="pb-8 pl-12 sm:pl-16"
-                >
+              <AnimatePresence initial={false}>
+                {expandedIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pb-8 pl-12 sm:pl-16">
                   {/* Mobile description */}
                   <p className="text-stone-500 text-sm leading-relaxed mb-6 sm:hidden">
                     {service.description}
@@ -185,8 +187,10 @@ export default function ServicesSection() {
                       })}
                     </div>
                   )}
-                </motion.div>
-              )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
         </div>

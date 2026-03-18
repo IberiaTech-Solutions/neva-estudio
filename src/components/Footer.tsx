@@ -116,6 +116,20 @@ export default function Footer() {
               ))}
             </div>
           </div>
+
+          <div className="border-t border-stone-800 mt-6 pt-6 text-center">
+            <p className="text-stone-600 text-[11px] tracking-wide">
+              Web design by{' '}
+              <a
+                href="https://www.iberiatechsolutions.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-stone-500 hover:text-white transition-colors"
+              >
+                IberiaTech Solutions
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

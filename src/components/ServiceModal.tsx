@@ -642,22 +642,22 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
             role="dialog"
             aria-modal="true"
             aria-label="Service details"
-            className="relative bg-white rounded-none shadow-2xl max-w-4xl w-full mx-2 sm:mx-4 max-h-[85svh] sm:max-h-[90vh] overflow-hidden"
+            className="relative bg-warm-white rounded-none shadow-2xl max-w-4xl w-full mx-2 sm:mx-4 max-h-[85svh] sm:max-h-[90vh] overflow-hidden"
           >
             {/* Header */}
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 sm:px-8 py-6 sm:py-8">
+            <div className="sticky top-0 bg-warm-white border-b border-stone-200 px-4 sm:px-8 py-6 sm:py-8">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <h2 className="text-2xl font-light text-gray-900 mb-2">{serviceContent.title}</h2>
-                  <div className="w-16 h-px bg-gray-400"></div>
+                  <h2 className="text-2xl font-serif text-stone-900 mb-2">{serviceContent.title}</h2>
+                  <div className="w-16 h-px bg-accent"></div>
                 </div>
                 <button
                   ref={closeRef}
                   onClick={onClose}
-                  className="p-2 hover:bg-gray-100 rounded-none transition-colors border border-gray-200 hover:border-gray-300"
+                  className="p-2 hover:bg-stone-100 rounded-none transition-colors border border-stone-200 hover:border-stone-300"
                   aria-label="Close"
                 >
-                  <X className="h-5 w-5 text-gray-500" />
+                  <X className="h-5 w-5 text-stone-500" />
                 </button>
               </div>
             </div>
@@ -674,15 +674,15 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                 >
                   {/* Section Header */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-light text-gray-900 mb-4">
+                    <h3 className="text-xl font-serif text-stone-900 mb-4">
                       {section.title}
                     </h3>
-                    <div className="w-12 h-px bg-gray-400"></div>
+                    <div className="w-12 h-px bg-accent"></div>
                   </div>
 
                   {/* Content */}
                   <div className="space-y-6">
-                    <div className="text-gray-600 leading-relaxed">
+                    <div className="text-stone-600 leading-relaxed">
                       {section.content.split('\n\n').map((paragraph, pIndex) => (
                         <p key={pIndex} className="mb-4 font-light">
                           {paragraph}
@@ -694,7 +694,7 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                   {/* Phases */}
                   {section.phases && section.phases.length > 0 && (
                     <div className="mt-10">
-                      <h4 className="text-lg font-light text-gray-900 mb-6">
+                      <h4 className="text-lg font-serif text-stone-900 mb-6">
                         {serviceKey === 'residential' ? 'Servicios Disponibles' : 'Fases del Proceso'}
                       </h4>
                       <div className="space-y-4">
@@ -713,24 +713,24 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                               <button
                                 key={phaseIndex}
                                 onClick={() => onServiceSelect(mappedKey)}
-                                className="group w-full text-left p-6 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 bg-white hover:bg-gray-50"
+                                className="group w-full text-left p-6 border border-stone-200 hover:border-stone-300 hover:shadow-lg transition-all duration-300 bg-warm-white hover:bg-stone-50"
                               >
                                 <div className="flex items-center justify-between">
-                                  <span className="text-gray-700 group-hover:text-gray-900 font-light text-base">
+                                  <span className="text-stone-700 group-hover:text-stone-900 font-light text-base">
                                     {phase}
                                   </span>
-                                  <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-gray-600 transition-colors" />
+                                  <ArrowRight className="h-5 w-5 text-accent group-hover:text-stone-600 transition-colors" />
                                 </div>
                               </button>
                             );
                           }
                           
                           return (
-                            <div key={phaseIndex} className="flex items-start space-x-4 p-4 border border-gray-200 hover:border-gray-300 transition-colors duration-200">
-                              <div className="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-light">
+                            <div key={phaseIndex} className="flex items-start space-x-4 p-4 border border-stone-200 hover:border-stone-300 transition-colors duration-200">
+                              <div className="flex-shrink-0 w-8 h-8 bg-stone-900 text-white rounded-full flex items-center justify-center text-sm font-light">
                                 {phaseIndex + 1}
                               </div>
-                              <div className="text-gray-600 font-light text-sm leading-relaxed">
+                              <div className="text-stone-600 font-light text-sm leading-relaxed">
                                 {phase}
                               </div>
                             </div>
@@ -747,13 +747,13 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-12 p-8 border-t border-gray-200"
+                className="mt-12 p-8 border-t border-stone-200"
               >
                 <div className="text-center">
-                  <h4 className="text-xl font-light text-gray-900 mb-4">
+                  <h4 className="text-xl font-serif text-stone-900 mb-4">
                     ¿Interesado en este servicio?
                   </h4>
-                  <p className="text-gray-600 mb-6 font-light max-w-2xl mx-auto">
+                  <p className="text-stone-600 mb-6 font-light max-w-2xl mx-auto">
                     Contacta con nosotros para obtener más información y un presupuesto personalizado sin compromiso.
                   </p>
                   <button
@@ -764,7 +764,7 @@ Te ofrecemos un servicio técnico fiable, adaptado a la normativa y con todas la
                         document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                       }, 300);
                     }}
-                    className="inline-flex items-center gap-3 bg-gray-900 text-white px-10 py-3 font-light text-base hover:bg-gray-800 transition-all duration-300"
+                    className="inline-flex items-center gap-3 bg-stone-900 text-white px-10 py-3 font-light text-base hover:bg-stone-800 transition-all duration-300"
                   >
                     Solicitar Presupuesto
                     <ArrowRight className="h-4 w-4" />

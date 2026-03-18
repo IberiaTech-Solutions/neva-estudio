@@ -438,13 +438,15 @@ export default function ProjectsSection() {
                     src={project.images[0]}
                     alt={project.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/40 transition-colors duration-500 flex items-end">
-                    <div className="p-5 sm:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  {/* Gradient + text overlay — always visible */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/70 transition-colors duration-500 flex items-end">
+                    <div className="p-5 sm:p-6">
                       <div className="text-white text-base sm:text-lg font-serif leading-tight">{project.title}</div>
                       <div className="text-white/60 text-xs sm:text-sm mt-1">{project.category} · {project.year}</div>
+                      <div className="text-white/40 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">{project.description}</div>
                     </div>
                   </div>
                 </div>

@@ -5,15 +5,15 @@ export default function PoliticaCookies() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-warm-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-3xl md:text-4xl font-thin text-gray-900 mb-8 tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-serif text-stone-900 mb-8 tracking-tight">
             Política de Cookies
           </h1>
-          <div className="w-20 h-px bg-gray-400 mb-12"></div>
+          <div className="w-20 h-px bg-accent mb-12"></div>
           
-          <div className="prose prose-lg max-w-none text-gray-700 font-light leading-relaxed">
-            <h2 className="text-xl font-light text-gray-900 mb-6">Introducción</h2>
+          <div className="prose prose-lg max-w-none text-stone-700 font-light leading-relaxed">
+            <h2 className="text-xl font-light text-stone-900 mb-6">Introducción</h2>
             <p className="mb-6">
               Este documento describe la Política de cookies que regula el sitio Web con URL https://www.nevaestudio.com/, 
               en adelante el Web, con el objetivo de garantizar la privacidad de los usuarios de Internet.
@@ -25,14 +25,14 @@ export default function PoliticaCookies() {
               y correo electrónico estudio@nevaestudio.com.
             </p>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">¿Qué son las cookies?</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">¿Qué son las cookies?</h2>
             <p className="mb-6">
               Las cookies son pequeños dispositivos de almacenamiento y recuperación de datos (ficheros) que los sitios 
               webs guardan en su ordenador, teléfono inteligente (Smartphone), tablet o cualquier otro dispositivo de 
               acceso a Internet.
             </p>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">¿Para qué sirven?</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">¿Para qué sirven?</h2>
             <p className="mb-6">
               Las cookies sirven para reconocer el dispositivo de los usuarios de Internet cuando vuelven a visitar el 
               sitio Web, facilitándole su uso recordando sus preferencias y configuración de navegación. También sirven 
@@ -40,7 +40,7 @@ export default function PoliticaCookies() {
               entender como los Usuarios de Internet utilizan nuestro sitio Web.
             </p>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">Tipos de cookies</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">Tipos de cookies</h2>
             <p className="mb-6">
               Según la entidad que las gestione: cookies propias y cookies de terceros.
             </p>
@@ -51,7 +51,7 @@ export default function PoliticaCookies() {
               Según su finalidad: cookies técnicas, cookies de preferencias, cookies de análisis y cookies de publicidad comportamental.
             </p>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">Cookies utilizadas en este web</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">Cookies utilizadas en este web</h2>
             <div className="mb-6">
               <p className="mb-4"><strong>Google Analytics:</strong></p>
               <ul className="list-disc pl-6 mb-4">
@@ -62,18 +62,18 @@ export default function PoliticaCookies() {
               </ul>
             </div>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">Gestión de cookies</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">Gestión de cookies</h2>
             <p className="mb-6">
               Puede configurar su navegador de Internet para aceptar o bloquear las cookies, borrar las instaladas, 
               o configurarlo para que se borren automáticamente cuando se cierre el navegador.
             </p>
 
-            <h2 className="text-xl font-light text-gray-900 mb-6">Contacto</h2>
+            <h2 className="text-xl font-light text-stone-900 mb-6">Contacto</h2>
             <p className="mb-6">
               Para realizar cualquier tipo de consulta respecto a esta política puede dirigirse a: estudio@nevaestudio.com
             </p>
 
-            <p className="text-sm text-gray-500 mt-12">
+            <p className="text-sm text-stone-500 mt-12">
               Última actualización: 11/06/2024
             </p>
           </div>
