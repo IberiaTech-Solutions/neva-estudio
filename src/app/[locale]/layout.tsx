@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import SetLang from "@/components/SetLang";
+import ConceptBanner from "@/components/ConceptBanner";
 
 const locales = ['es', 'en'];
 
@@ -72,14 +73,11 @@ export async function generateMetadata({
       creator: '@nevaestudio', // Replace with actual Twitter handle
     },
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        index: false,
+        follow: false,
       },
     },
     verification: {
@@ -111,6 +109,7 @@ export default async function LocaleLayout({
       </a>
       <SetLang />
       <StructuredData locale={locale} />
+      <ConceptBanner locale={locale} />
       <Header />
       <main id="main-content" className="min-h-screen">
         {children}
