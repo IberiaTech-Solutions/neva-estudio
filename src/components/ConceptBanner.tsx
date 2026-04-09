@@ -9,7 +9,7 @@ export default function ConceptBanner({ locale = "es" }: ConceptBannerProps) {
     <div
       role="note"
       aria-label={isSpanish ? "Aviso de proyecto conceptual" : "Concept project notice"}
-      className="bg-amber-400 text-stone-900 text-center py-2 px-4 text-xs sm:text-sm font-medium leading-snug"
+      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-[60] rounded-lg border border-amber-600/40 bg-amber-400/95 text-stone-900 px-4 py-3 text-xs sm:text-sm font-medium leading-snug shadow-lg backdrop-blur-sm pointer-events-none"
     >
       {isSpanish ? (
         <>
